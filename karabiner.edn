@@ -1,0 +1,123 @@
+{
+:main 
+ [{:des "command a to control 1" :rules [[:caps_lock :escape]]}
+  {:des "asdf to control alt command shift" 
+   :rules[
+      [:##a nil ["num-layer" 0]  
+        {
+          :held [:left_control]
+          :alone [:a]
+          :delayed {:canceled :a}
+          :params {:held 120 :delay 120}
+        }
+      ]
+      [:##s nil ["num-layer" 0]  
+        {
+          :held [:left_option]
+          :alone :s
+          :delayed {:canceled :s}
+          :params {:held 120 :delay 120}
+        }
+      ]
+      
+      [:##d nil ["num-layer" 0]  
+        {
+          :held [:left_command]
+          :alone :d
+          :delayed {:canceled :d}
+          :params {:held 120 :delay 120}
+        }
+      ] 
+      [:##f nil ["num-layer" 0]  
+        {
+          :held [:left_shift]
+          :alone :f
+          :delayed {:canceled :f}
+          :params {:held 120 :delay 120}
+        }
+      ]
+   ]
+  }
+  {:des "jkl; to control alt command shift" 
+   :rules[
+      [:##j nil ["num-layer" 0]  
+        {
+          :held [:right_shift]
+          :alone [:j]
+          :delayed {:canceled :j}
+          :params {:held 120 :delay 120}
+        }
+      ]
+      [:##k nil ["num-layer" 0]  
+        {
+          :held [:right_command]
+          :alone :k
+          :delayed {:canceled :k}
+          :params {:held 120 :delay 120}
+        }
+      ]
+      [:##l nil ["num-layer" 0]  
+        {
+          :held [:right_option]
+          :alone :l
+          :delayed {:canceled :l}
+          :params {:held 120 :delay 120}
+        }
+      ] 
+      [:##semicolon nil ["num-layer" 0]  
+        {
+          :held [:right_control]
+          :alone :semicolon
+          :delayed {:canceled :semicolon}
+          :params {:held 160 :delay 160}
+        }
+      ]
+   ]
+  }
+  {:des "Space to change to layer num"
+   :rules [
+      [:##spacebar ["num-layer" 1] nil {:afterup ["num-layer" 0] :alone :spacebar}]
+      [:##w :1 ["num-layer" 1]]
+      [:##e :2 ["num-layer" 1]]
+      [:##r :3 ["num-layer" 1]]
+      [:##s :4 ["num-layer" 1]]
+      [:##d :5 ["num-layer" 1]]
+      [:##f :6 ["num-layer" 1]]
+      [:##x :7 ["num-layer" 1]]
+      [:##c :8 ["num-layer" 1]]
+      [:##v :9 ["num-layer" 1]]
+      [:##b :0 ["num-layer" 1]]
+
+      [:##z :grave_accent_and_tilde ["num-layer" 1]]
+      [:##q :backslash ["num-layer" 1]]
+      [:##t :slash ["num-layer" 1]]
+      [:##a :open_bracket ["num-layer" 1]]
+      [:##g :close_bracket ["num-layer" 1]]
+      [:##h :##delete_or_backspace ["num-layer" 1]]
+
+      [:##j :right_shift ["num-layer" 1]]
+      [:##k :right_command ["num-layer" 1]]
+      [:##l :right_alt ["num-layer" 1]]
+      [:##semicolon :return_or_enter ["num-layer" 1]]
+
+      [:##i :hyphen ["num-layer" 1]]
+      [:##o :equal_sign ["num-layer" 1]]
+    ]
+   }
+{:des "Command to change to layer nav"
+   :rules [
+      [:##left_command ["num-layer" 2] nil {:afterup ["num-layer" 0] :alone :escape}]
+      [:##a :left_control ["num-layer" 2]]
+      [:##s :left_option ["num-layer" 2]]
+      [:##d :left_command ["num-layer" 2]]
+      [:##f :left_shift ["num-layer" 2]]
+      [:##h :left_arrow ["num-layer" 2]]
+      [:##j :down_arrow ["num-layer" 2]]
+      [:##k :up_arrow ["num-layer" 2]]
+      [:##l :right_arrow ["num-layer" 2]]
+      [:##i :hyphen ["num-layer" 2]]
+      [:##o :equal_sign ["num-layer" 2]]
+      
+    ]
+   }
+]}
